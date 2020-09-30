@@ -7,12 +7,10 @@ export type Item = {
     id: string,
     title: string,
     imageUrl: string,
-    voteAverage?:string,
-    overView?:string,
-    itemType?:ItemType
+    voteAverage?: string,
+    overView?: string,
+    itemCategory?: ItemType
 };
-
-
 
 export type AppContextProps = {
     selectedTab: string,

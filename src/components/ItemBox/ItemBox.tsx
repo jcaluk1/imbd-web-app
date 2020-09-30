@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { DETAILS } from '../../routes/routeNames';
-import { Item } from '../../types/items';
+import { DETAILS } from 'routes/routeNames';
+import { Item } from 'types/items';
 
 type ItemBoxProps = {
     item: Item
-}
+};
 
 const ItemBox = React.memo<ItemBoxProps>(
     ({ item }) => {
@@ -13,7 +13,7 @@ const ItemBox = React.memo<ItemBoxProps>(
         const history = useHistory();
 
         const goToDetails = (): void => {
-            history.push(DETAILS.replace(":id", item.id).replace(":item", item.itemType || "movie"));
+            history.push(DETAILS.replace(":id", item.id).replace(":item", item.itemCategory || "movie"));
         }
 
         return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import Home from '../pages/Home';
-import Details from '../pages/Details';
+import Home from 'pages/Home';
+import Details from 'pages/Details';
 import { DETAILS, HOME_PAGE } from './routeNames';
 
 const Routes: React.FC = () => {
@@ -14,7 +14,6 @@ const Routes: React.FC = () => {
             </Switch>
         </Router>
     )
-
 }
 
 export default Routes;

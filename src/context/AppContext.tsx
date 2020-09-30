@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { AppContextProps } from '../types/items';
+import { AppContextProps } from 'types/items';
 
 export const AppContext = createContext<Partial<AppContextProps>>({});
 

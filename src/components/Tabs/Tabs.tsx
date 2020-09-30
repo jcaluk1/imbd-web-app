@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
-import { AppContext } from '../../context/AppContext';
-import { AppContextProps } from '../../types/items';
+import React, { useContext } from 'react';
+import { AppContext } from 'context/AppContext';
+import { AppContextProps } from 'types/items';
 
-const Tabs: React.FC= () => {
-    const {setSelectedTab} = useContext(AppContext) as AppContextProps;
+const Tabs: React.FC = () => {
+    const { setSelectedTab } = useContext(AppContext) as AppContextProps;
     console.log("RENDER - Tabs");
     return (
         <>
