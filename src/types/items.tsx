@@ -1,26 +1,17 @@
+export enum ItemType {
+    SHOW = "tv",
+    MOVIE = "movie"
+}
 
 export type Item = {
     id: string,
     title: string,
     imageUrl: string,
-    voteAverage?:string
+    voteAverage?:string,
+    overView?:string,
+    itemType?:ItemType
 };
 
-export type ItemDetails = {
-    id: string,
-    title: string,
-    image: string,
-    overview: string;
-    
-};
-
-export type MovieContextProps = {
-    selectedTab: string,
-    search: string,
-    renderItems: Item[],
-    setSelectedTab: React.Dispatch<React.SetStateAction<string>>,
-    setSearch: React.Dispatch<React.SetStateAction<string>>
-  }
 
 
 export type AppContextProps = {
