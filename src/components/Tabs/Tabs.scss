@@ -1,0 +1,26 @@
+@import 'styles/colors';
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $color-gray-light;
+
+
+    &__item {
+        padding-right: 25px;
+        margin-right: 25px;
+        color: $color-gray-light;
+        border-bottom: 2px solid transparent;
+        font-weight: bold;
+        
+        &--active {
+            border-bottom: 2px solid $color-black !important;
+            color: $color-black !important;
+        }
+
+        &:hover {
+            border-bottom: 2px solid $color-blue;
+            color: $color-blue;
+        }
+    }
+}

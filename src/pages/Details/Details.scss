@@ -1,0 +1,74 @@
+@import 'styles/colors';
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 50px;
+    color: $color-blue;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+
+    }
+
+    &:focus {
+        border: none;
+    }
+
+    &__icon {
+        height: 10px;
+        width: 10px;
+        padding-right: 5px;
+        fill: $color-blue;
+    }
+}
+
+.item-media {
+    width: 60vw;
+    height: 30vw;
+    display: block;
+
+    @media screen and (max-width: 768px) {
+        width: 80vw;
+        height: 40vw;
+    }
+}
+
+.details {
+    width: 60vw;
+    height: 30vw;
+    
+    @media screen and (max-width: 768px) {
+        width: 80vw;
+        height: 40vw;
+    }
+    &__media {
+        width: fit-content;
+    }
+
+    &__rating {
+        float: right;
+    }
+
+    &__info {
+        padding-top: 33px;
+
+        &__header {
+            font-weight: bold;
+            display: block;
+            padding-top: 10px;
+        }
+
+        >div {
+            padding-bottom: 10px;
+            line-height: 25px;
+
+            &:first-child {
+                font-size: 1.5em;
+            }
+        }
+
+    }
+}

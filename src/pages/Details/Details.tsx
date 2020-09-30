@@ -5,14 +5,16 @@ import { getSingleMovie, getSingleShow } from 'services/ItemService';
 import { getYoutubeVideoId } from 'services/YoutubeService';
 import { ItemDetailsRouteParams } from 'types/details';
 import { Item } from 'types/items';
+import { ReactComponent as BackIcon } from 'assets/img/leftArrow.svg';
+import Rating from 'components/Rating';
+
+import './Details.scss';
 
 // Data for video player
 type OptionsAutoplay = 0 | 1 | undefined;
 const options = {
-    height: '390',
-    width: '640',
     playerVars: {
-        autoplay: 1 as OptionsAutoplay,
+        autoplay: 0 as OptionsAutoplay,
     },
 };
 
@@ -40,18 +42,22 @@ const Details: React.FC<RouteComponentProps<ItemDetailsRouteParams>> = (props) =
         fetchDetails();
     }, []);
 
+
     console.log("VIDEO ID", videoId);
     const _onReady = (e: any): void => e.target.pauseVideo();
-    const renderMedia = videoId ? <YouTube videoId={videoId} opts={options} onReady={_onReady} /> : <img src={selectedItem?.imageUrl} alt="itemImage" />;
+    const renderMedia = videoId ? <YouTube className="item-media" videoId={videoId} opts={options} onReady={_onReady} /> : <img className="item-media" src={selectedItem?.imageUrl} alt="itemImage" />;
 
     return (
-        <div>
-            <button onClick={() => history.goBack()}>Back</button>
-            <br />
-            {renderMedia}
-            <div>Tittle: {selectedItem?.title}</div>
-            <div>Rating: {selectedItem?.voteAverage}</div>
-            <div>Overview: {selectedItem?.overView}</div>
+        <div className="details">
+            <button className="back-button" onClick={() => history.goBack()}><BackIcon className="back-button__icon" />Back</button>
+            <div className="details__media">
+                {renderMedia}
+                <Rating className="details__rating" rating={selectedItem?.voteAverage} />
+            </div>
+            <div className="details__info">
+                    <div>{selectedItem?.title}</div>
+                    <div><span className="details__info__header">Overview: </span>{selectedItem?.overView}</div>
+                </div>
         </div>
     )
 }

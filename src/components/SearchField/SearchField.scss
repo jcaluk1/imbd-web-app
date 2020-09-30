@@ -1,0 +1,16 @@
+@import 'styles/colors';
+
+.search-field {
+    margin: 20px 0;
+    background: url(../../assets/img/searchIcon.svg) no-repeat scroll 6px 6px;
+    background-size: 12px;
+    padding: 5px 30px;
+    border-radius: 4px;
+    border: 2px solid $color-gray-light;
+    width: calc( 100% - 60px );
+
+    &:hover {
+        border: 2px solid $color-blue;
+    }
+
+}

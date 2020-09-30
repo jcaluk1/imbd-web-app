@@ -1,0 +1,26 @@
+@import 'styles/colors';
+
+.rating {
+    height: 30px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    svg {
+        height: 24px;
+        width: 24px;
+        padding-right: 7px;
+    }
+
+    &__number {
+        font-size: 0.7em;
+        color: $color-gray;
+
+        &__current {
+            font-size: 1.7em;
+            padding-right: 3px;
+            color: $color-black;
+        }
+    }
+}
