@@ -8,5 +8,6 @@ export const getYoutubeVideoId = (item: Item): Promise<string> | null => {
     const searchURL = YOUTUBE_SEARCH_URL.replace("QUERY", searchQuery);
     return fetch(searchURL)
         .then(res => res.json())
-        .then(data => data.items.length > 0 ? data.items[0].id.videoId : null);
+        .then(data => data.items.length > 0 ? data.items[0].id.videoId : null)
+        .catch(err => null);
 }

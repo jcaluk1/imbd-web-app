@@ -14,7 +14,7 @@ const getFormattedItem = (rawItem: any): Item => {
     return {
         id: rawItem.id,
         title: rawItem.title || rawItem.name,
-        imageUrl: rawItem.poster_path ? `https://image.tmdb.org/t/p/w200${rawItem.poster_path}` : cover,
+        imageUrl: rawItem.poster_path ? `https://image.tmdb.org/t/p/original${rawItem.poster_path}` : cover,
         voteAverage: rawItem.vote_average,
         overView: rawItem.overview,
         itemCategory: itemCategory

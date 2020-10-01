@@ -1,0 +1,14 @@
+.no-data-message {
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-list {
+	display: grid;
+	box-sizing: border-box;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 40px;	
+	justify-items: center;
+	align-items: center;
+	justify-content: center;	
+}

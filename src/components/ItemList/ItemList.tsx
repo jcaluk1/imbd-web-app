@@ -4,6 +4,8 @@ import { getMoviesFromSearch, getShowsFromSearch, getTopTenMovies, getTopTenShow
 import { AppContextProps, Item } from 'types/items';
 import ItemBox from '../ItemBox';
 
+import './ItemList.scss';
+
 const ItemList: React.FC = () => {
     console.log("RENDER - Item list")
     const { selectedTab, searchQuery } = useContext(AppContext) as AppContextProps;
@@ -38,8 +40,8 @@ const ItemList: React.FC = () => {
 
     return (
         renderItems.length !== 0
-            ? <div>{renderItems.map((item, index) => < ItemBox item={item} key={index} />)}</div>
-            : <div>No items found!</div>
+            ? <div className="item-list">{renderItems.map((item, index) => < ItemBox item={item} key={index} />)}</div>
+            : <div className="no-data-message">No items found!</div>
     )
 }
 

@@ -45,7 +45,7 @@ const Details: React.FC<RouteComponentProps<ItemDetailsRouteParams>> = (props) =
 
     console.log("VIDEO ID", videoId);
     const _onReady = (e: any): void => e.target.pauseVideo();
-    const renderMedia = videoId ? <YouTube className="item-media" videoId={videoId} opts={options} onReady={_onReady} /> : <img className="item-media" src={selectedItem?.imageUrl} alt="itemImage" />;
+    const renderMedia = videoId ? <YouTube className="item-media" videoId={videoId} opts={options} onReady={_onReady} /> : <img className="item-media item-media--img" src={selectedItem?.imageUrl} alt="itemImage" />;
 
     return (
         <div className="details">
@@ -55,9 +55,9 @@ const Details: React.FC<RouteComponentProps<ItemDetailsRouteParams>> = (props) =
                 <Rating className="details__rating" rating={selectedItem?.voteAverage} />
             </div>
             <div className="details__info">
-                    <div>{selectedItem?.title}</div>
-                    <div><span className="details__info__header">Overview: </span>{selectedItem?.overView}</div>
-                </div>
+                <div>{selectedItem?.title}</div>
+                <div><span className="details__info__header">Overview: </span>{selectedItem?.overView}</div>
+            </div>
         </div>
     )
 }
