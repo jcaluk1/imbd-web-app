@@ -4,7 +4,6 @@ import Tabs from 'components/Tabs';
 import SearchField from 'components/SearchField';
 
 const Home: React.FC = () => {
-    console.log("RENDER - Home")
     return (
         <>
             <Tabs />

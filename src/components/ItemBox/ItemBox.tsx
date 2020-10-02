@@ -12,7 +12,6 @@ type ItemBoxProps = {
 
 const ItemBox = React.memo<ItemBoxProps>(
     ({ item }) => {
-        console.log("RENDER - Single item ", item.id);
         const history = useHistory();
 
         const goToDetails = (): void => {

@@ -6,12 +6,9 @@ export const AppContext = createContext<Partial<AppContextProps>>({});
 const AppContextProvider: React.FC = (props) => {
     const [selectedTab, setSelectedTab] = useState<string>("movies");
     const [searchQuery, setSearchQuery] = useState<string>("");
-   
-    console.log("-------------")
-    console.log("RENDER - AppContext");
-    
+
     return (
-        <AppContext.Provider value={{ selectedTab, searchQuery, setSelectedTab, setSearchQuery}}>
+        <AppContext.Provider value={{ selectedTab, searchQuery, setSelectedTab, setSearchQuery }}>
             {props.children}
         </AppContext.Provider>
     )

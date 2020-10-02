@@ -34,7 +34,6 @@ const Details: React.FC<RouteComponentProps<ItemDetailsRouteParams>> = (props) =
 
         const youtubeVideoId = await getYoutubeVideoId(fetchedItem);
         setVideoId(youtubeVideoId);
-        console.log(fetchedItem)
         setSelectedItem(fetchedItem);
     };
 
@@ -42,8 +41,6 @@ const Details: React.FC<RouteComponentProps<ItemDetailsRouteParams>> = (props) =
         fetchDetails();
     }, []);
 
-
-    console.log("VIDEO ID", videoId);
     const _onReady = (e: any): void => e.target.pauseVideo();
     const renderMedia = videoId ? <YouTube className="item-media" videoId={videoId} opts={options} onReady={_onReady} /> : <img className="item-media item-media--img" src={selectedItem?.imageUrl} alt="itemImage" />;
 

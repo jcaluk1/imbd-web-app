@@ -7,14 +7,12 @@ import ItemBox from '../ItemBox';
 import './ItemList.scss';
 
 const ItemList: React.FC = () => {
-    console.log("RENDER - Item list")
     const { selectedTab, searchQuery } = useContext(AppContext) as AppContextProps;
     const [renderItems, setRenderItems] = useState<Item[]>([]);
 
     useEffect(() => {
         const isSearchQueryInvalid = searchQuery.length <= 3;
         if (isSearchQueryInvalid) {
-            console.log("PROMJENA FILMOVA - <= 3");
             if (selectedTab === "movies")
                 (async () => {
                     setRenderItems(await getTopTenMovies());
@@ -26,7 +24,6 @@ const ItemList: React.FC = () => {
                 })();
         }
         else {
-            console.log("PROMJENA FILMOVA - Duzina veca od 3");
             if (selectedTab === "movies")
                 (async () => {
                     setRenderItems(await getMoviesFromSearch(searchQuery));

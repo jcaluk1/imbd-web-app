@@ -8,7 +8,6 @@ import './SearchField.scss';
 const TIME_DELAY_MS = 1000;
 
 const SearchField: React.FC = () => {
-    console.log("RENDER - Search field");
     const { searchQuery, setSearchQuery } = useContext(AppContext) as AppContextProps;
     const [searchedText, setSearchedText] = useState(searchQuery);
 
@@ -21,7 +20,7 @@ const SearchField: React.FC = () => {
     }
 
     return (
-        <input className="search-field" type='text' value={searchedText} onChange={handleChange} placeholder="Search movies or shows"/>
+        <input className="search-field" type='text' value={searchedText} onChange={handleChange} placeholder="Search movies or shows" />
     )
 }
 

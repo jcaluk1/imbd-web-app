@@ -11,7 +11,6 @@ const Tabs: React.FC = () => {
     const moviesTabClasses = classNames("tabs__item", selectedTab === "movies" && "tabs__item--active");
     const showsTabClasses = classNames("tabs__item", selectedTab === "shows" && "tabs__item--active");
 
-    console.log("RENDER - Tabs");
     return (
         <div className="tabs">
             <div className={moviesTabClasses} onClick={() => setSelectedTab("movies")}>Movies</div>
